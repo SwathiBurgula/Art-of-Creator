@@ -1,0 +1,176 @@
+.navigation {
+    background-color: black;
+
+}
+
+.nav-item a, .btn.dropdown-toggle {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown-item.items {
+    color: #333;
+}
+
+.navbar-brand {
+
+    font-weight: bold;
+    color: #fff;
+}
+
+.parent {
+    display: block;
+    position: relative;
+    float: left;
+    line-height: 30px;
+ 
+}
+.content {
+    margin-left: 80px;
+}
+
+.parent a {
+    margin: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.parent:hover>ul {
+    display: block;
+    position: absolute;
+}
+
+.child {
+    display: none;
+    z-index: 1;
+}
+
+.child li {
+    background-color: #E4EFF7;
+    line-height: 30px;
+    border-bottom: #CCC 1px solid;
+    border-right: #CCC 1px solid;
+    width: 100%;
+}
+
+.child li a {
+    color: #000000;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+    min-width: 10em;
+}
+
+ul ul ul {
+    left: 100%;
+    top: 0;
+    margin-left: 1px;
+}
+
+li:hover {
+    text-decoration: underline;
+}
+
+.parent li:hover {
+    background-color: #F0F0F0;
+}
+
+.expand {
+    font-size: 12px;
+    float: right;
+    margin-right: 5px;
+}
+.heading-title{
+    padding-top: 20px;
+}
+.play-icon {
+    float: right;
+    color: white !important;
+    font-size: 100px !important;
+    position: relative;
+    bottom: 250px;
+    left: -140px;
+    margin-bottom: -250px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img ,.column video{
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  .hover-icons {
+      width: 20px !important;
+      height: 20px;
+  }
+  .fa {
+    
+    cursor: pointer;
+    user-select: none;
+    margin-right: 20px;
+    color: #fff;
+  }
+  
+  .fa:hover {
+    color: darkblue;
+  }
+  .photo-item__info {
+      float: right;
+      position: relative;
+      bottom: 35px;
+      margin-bottom: -35px;
+      display: none;
+  }
+  
+  
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+  
+
+@media screen and (min-width:991px) {
+    .nav-item a, .dropdown {
+        margin-left: 200px;
+        margin-right: 80px;
+    }
+
+    .navbar-brand {
+        font-size: 45px;
+
+    }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 990px) {
+
+    .nav-item a, .dropdown {
+        margin: 0
+    }
+
+}

@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+
+</body>
+
+<div class="row">
+    <div class="column">
+
+        {% for i in projects %}
+
+
+        <img src="{{ i.image.url }}" class="img1">
+        <div class="photo-item__info icons">
+
+            <a href="{{ i.image.url }}" download><button class="btn"><i
+                        class="fa fa-download"></i></button>
+            </a>
+            <i onclick="myFunction(this)" class="fa fa-thumbs-up">{{i.likes}}%</i>
+
+             <a class="share-btn share-btn-sm share-btn-more" target="_app"
+                href="https://www.addtoany.com/share_save?linkurl=/nature-images/nature (1).jpg"
+                title="More share options"><i class=" fa fa-share "></i></a>
+
+        </div>
+
+                <!-- <p class="fa fa-thumbs-up">
+                  <span style="font-weight: bold;">{{i.likes}}%</span>({{i.likes}} Likes)
+                </p>
+                <div class="project__tags"> -->
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("fa-thumbs-down");
+        }
+    </script>
+
+<script>
+    $(document).ready(function () {
+        $(".img1").mouseover(function () {
+            $(".icons").show(500);
+            $(".icons2,.icons4,.icons3,.icons5,.icons6,.icons7,.icons8,.icon9,.icons10,.icons11,.icons12,.icons13,.icons14,.icons15,.icons16,icons18,.icons19,.icons20,.icons21,.icons22,.icons23,.icons24,.icons25").hide();
+        });
+    });
+    
+</script>
+
+ <!--====== Map js ======-->
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
+ <script src="{% static 'js/map-script.js' %}"></script>
+ <script>
+     AOS.init();
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

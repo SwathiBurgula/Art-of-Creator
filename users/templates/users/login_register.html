@@ -1,0 +1,252 @@
+{% load static %}
+
+<!Doctype html>
+<html lang="en">
+
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>AOC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--====== style css ======-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+
+
+<style>
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap");
+::placeholder {
+  color: #ddd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #ddd;
+  font-family: "Montserrat", sans-serif;
+}
+
+input,
+button {
+  display: inline-block;
+  width: 100%;
+  height: 3.23rem;
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.login {
+  min-height: 100vh;
+  width: 100%;
+  background: url("../aoc/nature-3.gif");
+  background-size: cover;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login .container {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login .title {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+.login .social-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login .social-login button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 10rem;
+  margin: 0.75rem;
+  padding: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  cursor: pointer;
+  transition: background 0.3s ease-in;
+}
+.login .social-login button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.login .social-login button i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  padding-left: 2px;
+  text-align: center;
+  margin-right: 0.25rem;
+}
+.login .social-login button i.fa-facebook-f {
+  color: #000000;
+}
+.login .social-login button i.fa-google {
+  color: #000000;
+}
+.login .separator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login .separator span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+  margin: 1.5rem;
+}
+
+form {
+  width: 100%;
+}
+form .form-group {
+  margin-bottom:20px;
+}
+form .form-group label {
+  display: block;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  color: dark-blue;
+}
+form .form-group input {
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+  padding: 0 1.5rem;
+}
+
+button[type=submit] {
+  background: #ecbb08;
+  color: #023262;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin: 1rem 0;
+  transition: all 0.3s linear;
+}
+button[type=submit]:hover {
+  background: #ffc800;
+  opacity: 0.8;
+}
+
+.additional-act {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.7px;
+  margin: 0.5rem 0;
+}
+.additional-act span {
+  color: #ecbb08;
+  cursor: pointer;
+}
+</style>
+
+</head>
+
+{% block content %}
+    
+
+<section class="login">
+    <div class="container">
+      <h3 class="title">Sign up</h3>
+      
+      <!-- <div class="social-login">
+        
+        <button><i class="fab fa-facebook-f"></i> Facebook </button>
+        <button><i class="fab fa-google"></i> Google </button>
+        
+      </div>
+      
+      <p class="separator"><span>&nbsp;</span>Or<span>&nbsp;</span></p> -->
+      
+      <form>
+        <div class="form-group">
+          <label for="fullname"></label>
+          <input type="text" id="fullname" placeholder="Full Name">          
+        </div>
+        
+        <!-- <div class="form-group">
+          <label for="username"></label>
+          <input type="text" id="username" placeholder="User Name">          
+        </div> -->
+        
+        <!-- <div class="form-group">
+          <label for="login as"></label>
+          <input type="text" id="Login as" placeholder="Login as">          
+        </div> 
+        
+        <div class="form-group">
+          <label for="age"></label>
+          <input type="number" id="Age" placeholder=Age>          
+        </div> -->
+        
+        <div class="form-group">
+          <label for="Email"></label>
+          <input type="Email" id="Email" placeholder="Email Address">          
+        </div>
+        
+        <div class="form-group">
+          <label for="password"></label>
+          <input type="password" id="password" placeholder="Password">          
+        </div>
+        
+        <div class="form-group">
+          <label for="password"></label>
+          <input type="password" id="Conform Password" placeholder="Confirm Password">          
+        </div>
+        
+        <button type="submit" href="{% static 'create' %}">Sign up</button>
+      </form>
+      
+      <p class="additional-act">Already have an account? <span><a href="{% static 'login' %}"> Sign in</a> </span></p>
+      <p class="additional-act">Go <a href="{% static 'index' %}">Home</a> </span></p>
+      
+      
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <!--====== Map js ======-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
+  <script src="js/map-script.js"></script>
+  <script>
+      AOS.init();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
+
+{% endblock %}

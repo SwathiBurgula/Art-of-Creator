@@ -1,0 +1,165 @@
+{% load static %}
+
+<!Doctype html>
+<html lang="en">
+
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+
+    <!--====== Title ======-->
+    <title>Art Of Creator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--====== style css ======-->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+
+    <!--********-->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'styles/fontAwesome.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/light-box.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/owl-carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/templatemo-style.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+
+
+</head>
+
+{% include 'nav-bar.html' %}
+
+{% include 'index.html' %}
+
+
+{% block content %}
+
+
+<p>Images</p> 
+<table style="border: 2px groove blue;">
+   <tr >
+      <th>ID</th>
+      <th>Categeory</th>
+      <th>Shares</th>
+      <th>Likes (%)</th>
+      <th>View</th>
+   </tr >
+   {% for i in projects %}
+      <tr>
+         <td>
+            {{i.id}}
+         </td>
+         <td>
+            {{i.Categeory}}
+         </td>
+         <td>
+            {{i.Shares}}
+         </td>
+         <td>
+            {{i.Likes}}
+         </td>
+         <td>
+            <a href="{% url 'projects:project' p.id %}">view</a>
+         </td>
+         <td>
+            <a href="{% url 'projects:update-project' p.id %}">Like</a>
+         </td>
+         <td>
+            <a href="{% url 'projects:delete-project' p.id %}">Shares</a>
+         </td>
+         
+      </tr>
+                                 
+      <!-- <p> -- <a href="{% url 'projects:project' p.id %}">{{p.title | title}} </a>--{{p.description|truncatewords:3 }}</p>
+ -->
+   {% endfor %}
+
+   <div class="container ">
+    <h1 class="text-center heading-title">Categeory</h1>
+</div>
+
+   {% for i in projects %}
+
+<div class="row">
+    <div class="column">
+        <img src="{{i.image.url}}" class="img1">
+        <div class="photo-item__info icons1">
+
+            <a href="{% url 'posts:createpost' i.id %}" download><button class="btn">
+                <i class="fa fa-download"></i></button>
+            </a>
+            <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+
+            <span style="font-weight: bold;">{{i.Likes}}%</span>({{i.Likes}}</p>
+
+            <a class="share-btn share-btn-sm share-btn-more" target="_app"
+                href="{% url 'posts:createpost' i.id %}"
+                title="More share options"><i class=" fa fa-share "></i></a>
+
+        </div>
+    </div>
+    {% endfor %}
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script>
+        // Hide Header on on scroll down
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('header').outerHeight();
+
+        $(window).scroll(function(event){
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+            
+            // Make sure they scroll more than delta
+            if(Math.abs(lastScrollTop - st) <= delta)
+                return;
+            
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight){
+                // Scroll Down
+                $('header').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll Up
+                if(st + $(window).height() < $(document).height()) {
+                    $('header').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+            
+            lastScrollTop = st;
+        }
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+{% endblock %}
